@@ -35,11 +35,6 @@ class HomePageTest(TestCase):
         self.assertEqual(first_saved_item.text, 'The first (ever) list item')
         self.assertEqual(second_saved_item.text, 'Item the second')
 
-    def test_home_page_only_saves_items_when_necessary(self):
-        request = HttpRequest()
-        home_page(request)
-        self.assertEqual(Item.objects.count(), 0)
-
 
 class ListViewTest(TestCase):
 
